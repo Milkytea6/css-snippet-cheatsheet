@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Snippet Cheatsheet</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+
+
+<body>
+    <main>
+        <header class="cheatsheet">
+            <h1>CSS Snippet Cheatsheet</h1>
+            <p>Ever have truble recalling the exact syntax for your favoite CSS code?<br>
+                Give it a permanent home and add it to this page!<br>
+                Select any snippet below and it'll automatically select all of the code for you to copy.<br>
+            </p>
+        </header>
+
+        <div class="all-boxes">
+
+            <section class="box-1">
+                <header>
+                    <h2>Media Queries</h2>
+                    <p>Media queries help make a website responsive and compatible with all different types of devices.
+                        Using @media screen and (max-width: 768px) would make the following CSS attributes apply when
+                        the screen resolution goes below 768px. The following sinppet changes the box layout to show 2
+                        at a time on screens below 768px.
+
+                    </p>
+                </header>
+                <p class="snippet">@media screen and (max-width: 768px) {<br>
+                    .box-1 {<br>
+                    width: 48%;<br>
+                    }<br>
+                    }</p>
+            </section>
+
+
+            <section class="box-1">
+                <header>
+                    <h2>Flex Wrap</h2>
+                    <p>Use flex-wrap to make the container's children flexible.
+                        The contents in the container will resize and fit to the viewport as necessary.
+                        This code snippet is what makes each of these boxes felxible.
+                    </p>
+                </header>
+                <p class="snippet"><span class="all-boxes-span">.all-boxes</span>> {<br>
+                    display: flex;<br>
+                    flex-wrap: wrap;<br>
+                    margin-top: 2%;<br>
+                    justify-content: space-around;<br>
+                    }</p>
+            </section>
+
+            <section class="box-1">
+                <header>
+                    <h2>Position Absolute</h2>
+                    <p>Use <span class="position-absolute-span">position: absolute</span> combined with <span
+                            class="position-relative-span">position: relative</span> in the relative item
+                        to move the desired item where you want. This code snippet made the header of this box
+                        centered on the dotted line using negative top.
+                    </p>
+                </header>
+                <p class="snippet"><span class="box-1-span">.box-1</span> h2 {<br>
+                    border: 3px solid blanchedalmond;<br>
+                    <span class="position-absolute-span">position: absolute</span>;<br>
+                    top:-25px;<br>
+                    width: 80%;<br>
+                    text-align: center;<br>
+                    left: 10%;<br>
+                    }
+                </p>
+            </section>
+
+            <section class="box-1">
+                <header>
+                    <h2>Psuedo Classes</h2>
+                    <p>Use Psuedo Classes to active certain attributes when a certain action is preformed.</p>
+                </header>
+                <p class="snippet">
+                    <span class="hover-span">button:hover</span> {<br>
+                    background-color: #772014;<br>
+                    color: #fff;<br>
+                    }<br>
+
+
+                    <span class="active-span">button:active</span> {<br>
+                    font-size: 180%;<br>
+                    box-shadow: 0 0 10px #000 inset;<br>
+                    }<br>
+
+
+                    <span class="focus-span">button:focus</span> {<br>
+                    outline: none;<br>
+                    border-color: #8ac4ff;<br>
+                    }<br>
+                </p>
+            </section>
+
+            <section class="box-1">
+                <header>
+                    <h2>Pseudo Elements</h2>
+                    <p>Combined with psuedo classes, psuedo elements can be used to style a specific part of the
+                        selected elements.
+                        Use the ::before or the ::after to apply content to the selected element before or after.
+                    </p>
+                </header>
+                <p class="snippet">
+                    <span class="all-boxes-span-span">.all-boxes-span</span>:hover::before {<br>
+                    content: "Class for the container of all snippet boxes.";<br>
+                    position: absolute;<br>
+                    border: 2px solid aqua;<br>
+                    width: 150px;<br>
+                    background-color: var(--tooltip-color);<br>
+                    top:15px;<br>
+
+                    }
+                </p>
+            </section>
+
+            <section class="box-1">
+                <header>
+                    <h2>Variables</h2>
+                    <p>Use variables in CSS to apply the smae attribute to multiple selectors. First use :root, then
+                        inside the :root name the variables with --variable-name.
+                        This snippet adds variables to this websites tooltip psuedo elements.</p>
+                </header>
+                <p class="snippet"><span class="root-span">:root</span> {<br>
+                    --tooltip-color: rgb(20, 20, 20, .85);<br>
+                    --tooltip-border: 2px solid aqua;<br>
+                    --tooltip-width: 150px;<br>
+                    --tooltip-top: 15px;<br>
+                    }</p>
+            </section>
+        </div>
+
+
+    </main>
+
+
+
+
+
+</body>
+
+
+
+
+</html>

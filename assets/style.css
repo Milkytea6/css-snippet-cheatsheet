@@ -1,0 +1,214 @@
+* {
+    font-size: 100%;
+    color: blanchedalmond;
+    background-color: cadetblue;
+   
+}
+
+/* Variables for the psuedo elements tooltip box. */
+:root {
+    --tooltip-color: rgb(20, 20, 20, .85);
+    --tooltip-border: 2px solid aqua;
+    --tooltip-width: 150px;
+    --tooltip-top: 15px;
+    --gradient-blue: linear-gradient(30deg, cadetblue,rgb(71, 117, 119));
+}
+
+
+h1 {
+    font-size: 300%;
+    text-align: center;
+    background: var(--gradient-blue);
+}
+
+h1+p {
+    text-align: center;
+    border-bottom: 10px dotted blanchedalmond;
+    position: relative;
+    padding: 0px 0px 20px 0px;
+    font-size: 125%;
+    background: var(--gradient-blue);
+
+
+}
+.cheatsheet{
+    background: var(--gradient-blue);
+}
+
+
+/* Selects every box on the page. */
+.all-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2%;
+    justify-content: space-around;
+
+
+}
+
+/* Every box has a class of box-1 */
+.box-1 {
+    border: 5px ridge midnightblue;
+    box-sizing: border-box;
+    width: 30%;
+    min-width: 400px;
+    padding: 25px;
+    position: relative;
+    margin: 50px 10px 0px 10px;
+    flex: 1 0 200px;
+    background: var(--gradient-blue);
+}
+
+/* Create the header top of each box. */
+.box-1 h2 {
+    border: 3px ridge midnightblue;
+    position: absolute;
+    top: -40px;
+    width: 80%;
+    text-align: center;
+    left: 10%;
+    font-size: 150%;
+    color: midnightblue;
+    background: var(--gradient-blue);
+
+}
+
+header p {
+    text-indent: 10px;
+    border-bottom: 5px dotted midnightblue;
+    padding-bottom: 10px;
+    background: var(--gradient-blue);
+}
+
+/* So users can easily copy snippet */
+.snippet {
+    user-select: auto;
+    background: var(--gradient-blue);
+}
+
+/* creates different color text so users know to hover for tooltips. */
+.position-relative-span,
+.position-absolute-span,
+.all-boxes-span,
+.all-boxes-span-span,
+.hover-span,
+.active-span,
+.focus-span,
+.root-span {
+    color: aqua;
+    position: relative;
+}
+
+
+/* ""NOT WORKING, USED VARIABLES INSTEAD.""
+.position-relative-span:hover::before,
+.position-absolute-span:hover::before,
+.all-boxes-span:hover::before,
+.all-boxes-span-span:hover::before,
+.hover-span:hover::before,
+.active-span:hover::before,
+.focus-span:hover::before,{
+    position: absolute;
+    border: 2px solid aqua;
+    width: 150px;
+    background-color: var(--tooltip-color);
+    top: 15px;
+}
+
+ */
+
+
+
+/* All psuedo elements with variables for the tooltips on the page. */
+
+
+.position-relative-span:hover::before {
+    content: "Places content in the normal flow and can be manipulated by top,bottom,left and right unlike position: static.";
+    position: absolute;
+    border: var(--tooltip-border);
+    width: var(--tooltip-width);
+    background-color: var(--tooltip-color);
+    top: var(--tooltip-top);
+
+
+}
+
+.position-absolute-span:hover::before {
+    content: "Places content outside the flow of the document.";
+    position: absolute;
+    border: var(--tooltip-border);
+    width: var(--tooltip-width);
+    background-color: var(--tooltip-color);
+    top: var(--tooltip-top);
+
+}
+
+.all-boxes-span:hover::before {
+    content: "Class for the container of all snippet boxes.";
+    position: absolute;
+    border: var(--tooltip-border);
+    width: var(--tooltip-width);
+    background-color: var(--tooltip-color);
+    top: var(--tooltip-top);
+
+}
+
+.all-boxes-span-span:hover::before {
+    content: "Class for the .all-boxes-span span.";
+    position: absolute;
+    border: var(--tooltip-border);
+    width: var(--tooltip-width);
+    background-color: var(--tooltip-color);
+    top: var(--tooltip-top);
+
+}
+
+.hover-span:hover::before {
+    content: "The user's cursor is positioned over the element";
+    position: absolute;
+    border: var(--tooltip-border);
+    width: var(--tooltip-width);
+    background-color: var(--tooltip-color);
+    top: var(--tooltip-top);
+
+}
+
+.active-span:hover::before {
+    content: "The user is actively pressing down on the element";
+    position: absolute;
+    border: var(--tooltip-border);
+    width: var(--tooltip-width);
+    background-color: var(--tooltip-color);
+    top: var(--tooltip-top);
+
+}
+
+.focus-span:hover::before {
+    content: "The element is currently in focus, either by tabbing to or clicking on it";
+    position: absolute;
+    border: var(--tooltip-border);
+    width: var(--tooltip-width);
+    background-color: var(--tooltip-color);
+    top: var(--tooltip-top);
+
+}
+
+.root-span:hover::before {
+    content: ":root is the selector where you create your variables.";
+    position: absolute;
+    border: var(--tooltip-border);
+    width: var(--tooltip-width);
+    background-color: var(--tooltip-color);
+    top: var(--tooltip-top);
+}
+
+
+
+/* media query should be obsolete with flex-wrap, but here just in-case. */
+
+@media screen and (max-width: 768px) {
+    .box-1 {
+        width: 48%;
+    }
+
+}
